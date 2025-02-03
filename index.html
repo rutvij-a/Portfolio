@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rutvij Ambodkar</title>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                max-width: 100%;
+            }
+
+            .navbar{
+                position: fixed;
+                left: 0;
+                top: 0;
+                background-color: #85d1db;             
+                width: 100%;
+                height: 70px;
+                z-index: 7;   
+            }      
+            .navbar ul{
+                list-style-type: none;
+                text-align: center;            
+                padding-top: 7px;            
+            }
+            .navbar li{
+                display: inline;                     
+            }
+            .navbar a{
+                text-decoration: none;
+                color: #000080;
+                padding: 20px;          
+            }
+            .dropdown{                        
+                position: relative;
+                overflow: hidden;
+            }
+            .dropbtn{            
+                display: inherit;
+                background-color: inherit;
+                color: white;
+                padding: 20px;
+                font-size: inherit;
+                border: none;
+                outline: none;
+                cursor: pointer;            
+            }
+            .navbar li a:hover, .dropdown:hover .dropbtn{                
+                color: #b3ebf2;
+            }
+            .dropdown-contents{
+                position: absolute;
+                right: -175px;
+                top: 34px;                       
+                display: none;
+                background-color: white;                     
+                min-width: 290px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 9;
+                border-top: none;            
+            }
+            .dropdown-contents a {                
+                color: black;
+                padding: 12px;
+                text-decoration: none;
+                display: block;
+                text-align: center;
+            }
+            .dropdown-contents a:hover {
+                background-color: #b3ebf2;
+                color:#000080;
+            }
+            .dropdown:hover .dropdown-contents {
+                display: block;
+            }
+
+            .head{            
+                display: grid;
+                background-color: #66f4ff; 
+                margin: 70px auto 0 auto;
+                width: 100%; 
+                height: 100vh;   /*100% of viewport height*/                        
+            }
+            .name{
+                display: grid;
+                text-align: center;
+                align-items: center;    
+                padding: 34px;
+                font-size: 50px;                   
+            }
+
+            .about{
+                display: block;
+                background-color: gold;
+                margin: auto;
+                padding: 25px;
+                width: 100%;
+                height: auto;            
+            }
+            .about-title                                                               
+            {
+                text-align: center;
+                font-size: 50px;
+                margin: 50px auto 50px auto;
+            }
+            img{
+                float: left;
+                margin-top: 7px;
+                margin-right: 150px;
+                margin-left: 52px;
+                background-color: whitesmoke;
+                border-style: ridge;                
+                border-radius: 25px; 
+            }
+            .desc{
+                width: 90%;
+                font-size: 30px;
+                text-align: center;
+                margin: 52px auto;            
+                text-align: justify;
+                overflow: hidden;
+            }
+
+            .project{
+                display: block;
+                background-color: lightgreen;
+                margin: auto;
+                padding: 25px;
+                width: 100%;
+                height: auto;            
+            }
+            .project-title                                                               
+            {
+                text-align: center;
+                font-size: 50px;
+                margin: 50px auto 50px auto;
+            }
+            .project-subtitle{
+                text-align: center;
+                font-size: 30px;
+            }
+            .project-container1{
+                display: flex;
+                box-sizing: border-box;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 50px auto;
+                grid-gap: 100px;
+            }
+            .project1 , .project2, .project3{
+                position: relative;
+                width: 500px;
+                height: 290px;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 25px;
+                background-color: white;
+                text-align: center;
+                box-shadow: 34px 34px grey;               
+            }
+            .project1-name, .project2-name, .project3-name{
+                position: absolute;
+                left: 0;
+                top: -22px;            
+                width: 500px;
+                height: auto;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 25px;
+                background-color: white;
+                text-align: center;
+            }            
+            .project1-desc, .project2-desc, .project3-desc{
+                position: relative;                                                            
+                width: 450px;
+                border: 1px solid black;
+                padding: 20px;            
+                border-radius: 25px;
+                background-color: greenyellow;
+                text-align: justify;
+                font-size: 20px;
+                font-weight: normal;            
+            }
+            .project1:hover, .project2:hover, .project3:hover{
+                transform: translate(23px,34px);
+                box-shadow: none;
+            }
+            .project-container2{
+                display: flex;
+                box-sizing: border-box;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin: 50px auto;
+                grid-gap: 100px;
+            }
+            .project4, .project5, .project6{
+                position: relative;
+                width: 500px;
+                height: 300px;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 25px;
+                background-color: white;
+                text-align: center;
+                box-shadow: 34px 34px #757C88;
+            }
+            .project4-name, .project5-name, .project6-name{
+                position: absolute;
+                left: 0;
+                top: -22px;            
+                width: 500px;
+                height: auto;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 25px;
+                background-color: white;
+                text-align: center;
+            }
+            .project4-desc, .project5-desc, .project6-desc{
+                position: relative;                                                            
+                max-width: 450px;
+                border: 1px solid black;
+                padding: 20px;            
+                border-radius: 25px;
+                background-color: greenyellow;
+                text-align: justify;
+                font-size: 20px;
+                font-weight: normal;            
+            }
+            .project4:hover, .project5:hover, .project6:hover{
+                transform: translate(23px,34px);
+                box-shadow: none;
+            }
+
+            .contact{
+                position: relative;
+                left: 0px;
+                display: block;
+                width: 100%;
+                height: auto;
+                background-color: #7d99aa;
+                margin-top: 0;
+                padding: 10px;
+            }
+            .contact-title{
+                color: white;
+                text-align: center;
+                font-size: 50px;
+                margin: 50px auto 0 auto;
+            }
+            .contact-container{
+                display: inline-flex;            
+                margin: 50px auto;
+                grid-gap: 700px;
+                background-color: transparent;
+                max-width: 100%;
+                height: 250px;                
+            }       
+            .details h1,.details a{
+                color: white;
+            }        
+            .social a,.social h1{
+                text-decoration: none;
+                color: white;
+                padding: 16px;
+                font-size: 34px;
+            }
+            /*.social,.details{
+                background-color: blanchedalmond;
+            }*/
+
+            /*Responsive*/
+            /*For mobile devices*/
+            @media (min-width: 0) and (max-width: 409px) {
+                .navbar{
+                    height: auto;                    
+                }
+                .navbar ul{
+                    display: block;
+                }               
+            }
+
+            @media (min-width: 410px) and (max-width: 504px) {
+                .navbar{
+                    height: auto;
+                }
+                .navbar ul{
+                    display: block;
+                }
+                .resume, .dropbtn{
+                    position: relative;
+                    top: 16px;
+                }
+            }
+
+            @media (min-width: 505px) and (max-width: 628px) {
+                .navbar{
+                    height: auto;
+                }
+                .navbar ul{
+                    display: block;
+                }               
+                .dropbtn{
+                    position: relative;
+                    top: 16px;
+                }
+            } 
+            
+
+            @media screen and (min-width :0px) and (max-width :900px) {
+                body{
+                    overflow-x: hidden;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .desc {
+                    width: 80vw;
+                    font-size: 20px;
+                    text-align: justify;
+                    margin: 20px auto;
+                    overflow: hidden;
+                }            
+                .desc img {
+                    float: none;
+                    display: block;
+                    margin: 0 auto 20px auto;
+                }
+                .project-title {
+                    font-size: 40px;
+                }
+                .project-subtitle {
+                    font-size: 18px;
+                    margin-left: -34px;                    
+                }
+                .project-container1, .project-container2 {
+                    flex-direction: column; /* Stack items vertically */
+                    align-items: center;
+                    margin-bottom: 100px;                    
+                }
+                .project1, .project2, .project3, .project4, .project5, .project6 {
+                    flex: 1 1 100%; /* Full width on smaller screens */
+                    width: 80vw;
+                    margin-bottom: 300px;
+                    margin-left: -50px;
+                    box-shadow: none;
+                }
+                .project1-name, .project2-name, .project3-name, .project4-name, .project5-name, .project6-name {
+                    font-size: 25px;
+                    width: 81vw;
+                    height: auto;
+                }
+                .project1-desc, .project2-desc, .project3-desc, .project4-desc, .project5-desc, .project6-desc {
+                    font-size: 19px;
+                    width: 71vw;
+                }
+                .project1:hover , .project2:hover, .project3:hover, .project4:hover, .project5:hover, .project6:hover {
+                    transform: none;
+                }
+                .contact-title {                    
+                    font-size: 40px;
+                    text-align: center;
+                }
+                .contact-container{                    
+                    flex-direction: row;                                                     
+                }
+                .details {
+                    position:relative;
+                    left: -160px;
+                    bottom: 19px;
+                    align-items:justify;
+                    text-align: justify;                    
+                }
+                .social {
+                    position:absolute;
+                    display: grid;                    
+                    width: 55px;
+                }               
+                .details h1{
+                    font-size: 20px;
+                }
+                #email,#number{                    
+                    font-size: 15px;                                      
+                }                
+                .social h1{
+                    display:none;
+                    font-size: 10px;
+                }
+                .social a {
+                    font-size: 20px;                                       
+                }
+            }
+
+            @media screen and (min-width: 0px) and (max-width: 999px) {
+                .dropbtn{
+                    position: relative;
+                }
+                .dropdown-contents{
+                    position: absolute;                    
+                    left: -50%; /* Center horizontally */
+                    right: 50%;
+                    overflow-x: hidden;                                                            
+                }
+                .dropdown-contents a{
+                    padding: auto 7px;
+                    width: 50vw;
+                    margin-right: none;
+                }
+            }
+
+            @media screen and (min-width:0px) and (max-width:1080px){
+                .project-container1, .project-container2 {
+                    flex-direction: column; /* Stack items vertically */
+                    align-items: center;
+                    margin-bottom: 160px;
+                }
+                .project1, .project2, .project3, .project4, .project5, .project6 {
+                    flex: 1 1 100%; /* Full width on smaller screens */
+                    width: 80vw;
+                    margin-bottom: 340px;
+                    margin-left: -50px;
+                    box-shadow: none;
+                }
+                .project1-name, .project2-name, .project3-name, .project4-name, .project5-name, .project6-name {
+                    font-size: 25px;
+                    width: 81vw;
+                    height: auto;
+                }
+                .project1-desc, .project2-desc, .project3-desc, .project4-desc, .project5-desc, .project6-desc {
+                    font-size: 19px;
+                    width: 71vw;
+                }
+                .project1:hover , .project2:hover, .project3:hover, .project4:hover, .project5:hover, .project6:hover {
+                    transform: none;
+                }
+                .head, .contact, .about, .project {
+                    width: 110%;
+                }
+                .cont, .resume, .dropbtn{
+                    position: relative;
+                    top: 16px;
+                }
+            }
+            /*Till here only for mobile devices*/
+
+            @media screen and (min-width: 900px) and (max-width: 1650px) {
+                .contact{
+                    position: relative;
+                }
+                .contact-container{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0px;                    
+                }
+                .details{
+                    position: relative;
+                    top: -18px;
+                    left: 5vw;
+                }
+                .social{
+                    position: absolute;
+                    bottom: 0;
+                    left: 37vw;                    
+                }
+                .social h1{
+                    display: none;
+                }                
+            }
+
+            @media screen and (min-width: 900px) and (max-width: 1545px) {
+                .project-container1, .project-container2 {
+                    flex-direction: row; /* Stack items horizontally */
+                    align-items: center;
+                    margin-bottom: 160px;
+                }
+                .project1, .project2, .project3, .project4, .project5, .project6 {                    
+                    box-shadow: none;
+                }
+                .project1-name, .project2-name, .project3-name, .project4-name, .project5-name, .project6-name {
+                    font-size: 16px;
+                    max-width: 33vw;
+                    height: auto;
+                }
+                .project1-desc, .project2-desc, .project3-desc, .project4-desc, .project5-desc, .project6-desc {
+                    font-size: 19px;
+                    max-width: 25vw;
+                }
+                .project1:hover , .project2:hover, .project3:hover, .project4:hover, .project5:hover, .project6:hover {
+                    transform: none;
+                }
+            }
+
+            @media screen and (min-width: 1190px) and (max-width: 1545px) {
+                .project1, .project2, .project3, .project4, .project5, .project6 {
+                    background-color: transparent;
+                    border-bottom: none;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+        </style>
+
+        <script src="https://kit.fontawesome.com/f085dee1bb.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>    
+            <header class="navbar box">
+                <ul>
+                    <li><a href="#home" >Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#contact" class="cont">Contact</a></li>
+                    <li><a href="files\Rutvij-Resume.pdf" target="_blank" class="resume">Resume</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Publications
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-contents">
+                            <a href="https://drive.google.com/file/d/1nav_-Kc1XFDJwmCX5yJUkwWTszRLHPhN/view?pli=1" target="_blank" style="color: black;">Tweetler</a>
+                            <a href="https://www.irjet.net/archives/V8/i11/IRJET-V8I1150.pdf" target="_blank" style="color: black;">Smart Health Monitoring System</a>
+                            <a href="https://www.irjet.net/archives/V8/i4/IRJET-V8I4303.pdf" target="_blank" style="color: black;">Android based Electric Switch</a>
+                        </div>
+                    </li>                             
+                </ul>        
+            </header>
+        
+                <section class="head" id="home">                
+                    <h1 class="name">👋 Hi, I'm Rutvij</h1>                    
+                </section>
+                
+                <section class="about" id="about">
+                    <h1 class="about-title">About Me</h1>
+                    <p class="desc">
+                        <img src="images\IMG_20240225_161931(1).png" alt="myphoto" width="300" height="310">
+                        An enthusiastic engineering graduate with a passion for tackling complex problems and devising innovative solutions. 
+                        Armed with a Bachelor's degree in Electronics Engineering, 
+                        I thrive on challenges and am always eager to learn and adapt in a fast-paced environment.
+                        Throughout my academic journey, I have participated in numerous hands-on projects, and collaborated with cross-functional teams to deliver impactful results.
+                        I have a passion for continuous learning and staying updated with the latest technological advancements.
+                        <br><br>
+                        As I embark on my professional journey, I am seeking opportunities to contribute my skills and grow within a dynamic and forward-thinking organization. 
+                        Let's connect and explore how we can work together to drive innovation and success!                    
+                    </p>                
+                </section>
+
+                <section class="project" id="project">
+                    <h1 class="project-title">Projects</h1>
+                    <p class="project-subtitle">Here you'll find some of the personal projects that I have created.</p>
+                    <div class="project-container1">
+                        <div class="project1">
+                            <h1 class="project1-name">Tweetler
+                                <p class="project1-desc" >A sentimental analysis virtual bot that can analyze and predict the sentiment of a tweet based on the words used in it 
+                                    and seggregates the tweets into positive, negative and neutral categories.</p>
+                                Skills Used: <i class="fa fas"></i>AI, Natural Language Processing                            
+                            </h1>                        
+                        </div>
+                        <div class="project2">
+                            <h1 class="project2-name">The Book Look
+                                <p class="project2-desc">The Book Look is an online web application where the customer can
+                                    purchase books online. Through a web browser the customers can search for a book by its title or
+                                    author, later can add to the shopping cart and finally purchase the books.</p>
+                                    Skills Used: HTML,CSS, MySQL
+                            </h1>
+                        </div>
+                        <div class="project3">
+                            <h1 class="project3-name">Academic Record Management System
+                                <p class="project3-desc">Academic record management systems make faculty jobs more accessible by giving them an easy
+                                    place to find and sort information. This system allows teachers and student managers to
+                                    follow with their student engagement</p>
+                                    Skills Used: HTML, CSS, DBMS
+                            </h1>
+                        </div>                    
+                    </div>                
+                    <div class="project-container2">
+                        <div class="project4">
+                            <h1 class="project4-name">Python Assistant
+                                <p class="project4-desc">The Smart Personal Assistant provide natural language interaction tailored to the users device, 
+                                    and coordination of a range of specialist job assistants. The modules used here is pyttsx3 module and 
+                                    SpeechRecognition for dialogue actions, and communication between agents</p>
+                                    Skills Used: Python
+                            </h1>
+                        </div>
+                        <div class="project5">
+                            <h1 class="project5-name">Android Based Electric Switch
+                                <p class="project5-desc">The project is designed to operate an electric switch through an android application. 
+                                    The android application sends commands to the Bluetooth module that is interfaced with the microcontroller. 
+                                    that operates the relay switch to turn on or off the electric appliance.</p>
+                                    Skills Used: Android, Arduino
+                        </div>
+                        <div class="project6">
+                            <h1 class="project6-name">Smart Health Monitoring System
+                                <p class="project6-desc">The Smart Health Monitoring System monitors the basic important signs of patients like heart rate,
+                                    body temperature. Device consist of basic tool which will help the patient and doctor to save their precious time
+                                    and also to diagnose the patient far away from the birth land too.</p>
+                                    Skills Used: IoT, Arduino
+                            </h1>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="contact" id="contact">
+                    <h1 class="contact-title">Contact</h1>                
+                    <div class="contact-container">
+                        <div class="details" style="float:left; padding:7px ;margin-left:277px;">
+                            <h1 style="font-size: 40px;">Rutvij Ambodkar</h1>                        
+                            <a href="mailto:rutvijambodkar@gmail.com" id="email" style="text-decoration: none; color:white; font-size: 20px;">rutvijambodkar@gmail.com</a>
+                            <br><br>
+                            <a href="tel:+919920554833" id="number" style="text-decoration: none; color:white; font-size: 20px;">+919920554833</a>
+                        </div>
+                        <div class="social" style="float: right; padding:10px;margin-right: 50px;">
+                            <h1>Social</h1>                            
+                                <a href="https://www.linkedin.com/in/rutvij-ambodkar" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="https://www.github.com/rutvij-a" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://www.instagram.com/rutvij_a/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/rutvij.ambodkar" target="_blank"><i class="fa-brands fa-facebook"></i></a>                           
+                        </div>
+                    </div>
+                </footer>
+    </body>
+</html>
