@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Based Electric Switch</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {            
+            color: #2f9cf0;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;            
+            border-radius: 8px;            
+            flex-grow: 1;
+        }
+        .container .section p,ul{
+                text-align: justify;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #2f9cf0;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        .section p {
+            color: antiquewhite;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Footer styles */
+        footer {            
+            color: white;
+            text-align: center;
+            padding: 15px;            
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }            
+
+            footer {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Android Based Electric Switch</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>The Android-Based Electric Switch project aims to provide a remote-controlled electrical switch system using an Android app and Bluetooth communication. 
+                The objective is to make home automation more convenient and energy-efficient, allowing users to monitor and control appliances wirelessly. 
+                The system is built using an Arduino microcontroller, a Bluetooth module (HC-05), and a relay, ensuring seamless interaction between hardware and software.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Features & Functionality</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li><b>Wireless Control:</b> Users can switch electrical appliances ON/OFF remotely using an Android application.</li><br>
+                    <li><b>Bluetooth Communication:</b> The system uses Bluetooth technology for seamless communication between the Android device and the Arduino microcontroller.</li><br>
+                    <li><b>Arduino Integration:</b> The Arduino Uno processes commands and controls the electrical switch.</li><br>
+                    <li><b>Relay Control:</b> A relay module is used to switch AC appliances ON or OFF based on the app's input.</li><br>
+                    <li><b>Energy Efficiency:</b> Helps in reducing power consumption by remotely managing electrical devices.</li><br>
+                </ul>
+            </p>
+            <!--<img src="feature-image.jpg" alt="Feature Description">-->
+        </div>
+
+        <div class="section">
+            <h2>Project Demonstration</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li>The HC-05 Bluetooth module communicates with the Arduino Uno, allowing users to control devices via the ABES app.</li><br>
+                    <li>When the user presses the power button in the app, the system checks the relay’s status:</li><br>
+                        <ul>
+                            <li>If OFF → It turns ON the appliance.</li></li><br>
+                            <li>If ON → It turns OFF the appliance.</li></li><br>
+                        </ul>
+                    <li>The relay is responsible for physically switching the device ON or OFF.</li><br>
+                    <li>The circuit is powered by a battery, ensuring consistent operation.</li><br>
+                </ul>
+            </p>
+            <button onclick="window.location.href='https://www.irjet.net/archives/V8/i4/IRJET-V8I4303.pdf'">Learn More</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright 2025 | All Rights Reserved</p>
+            <p>Made by<a href="#">Rutvij A</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
