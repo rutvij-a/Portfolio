@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutvij's Portfolio</title>
+    <link rel="icon" href="./Images/ChatGPT Image Apr 5, 2025, 12_22_28 AM-modified.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            padding-bottom: 25px; /* Prevent content from being hidden under the footer */
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 25px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;            
+            z-index: 1000;
+        }
+        .navbar .logo {
+            color: rgba(16,90,199,1);
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 90px;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 70px;
+            position: relative;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: rgba(16,90,199,1);
+            font-size: 16px;
+            position: relative;
+        }
+        .navbar .menu a:hover {
+            color: #fff;
+        }        
+        .navbar .menu .dropdown {
+            position: relative;
+        }
+        .navbar .menu .dropdown-content {
+            display: none;
+            position: absolute;            
+            top: 100%;
+            left: 0;
+            width: 250px;            
+            height: auto;            
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 25px;
+            border-radius: 5px;
+            flex-direction: column;
+        }
+        .navbar .menu .dropdown-content a:hover {
+            color: #fff;
+        }
+        .navbar .menu .dropdown-content a {
+            color: rgba(16,90,199,1);
+            text-decoration: none;
+            margin: 5px 0;
+            padding-top: 20px;
+        }
+        .navbar .menu .dropdown:hover .dropdown-content {
+            display: flex;            
+        }
+        .navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .navbar .hamburger div {
+            background-color: rgba(16,90,199,1);
+            height: 3px;
+            width: 25px;
+            margin: 3px 0;
+        }
+        .navbar .telephone {
+            color: rgba(16,90,199,1);
+            font-size: 20px;
+            text-decoration: none;
+            display: flex;
+            margin-right: 7%;
+        }
+        .navbar .telephone:hover {
+            color: #fff;
+        }
+
+        section{
+            margin-bottom: 16%;            
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-left: 10%;
+            margin-top: 10%;
+        }
+        .left {
+            flex: 1;
+            max-width: 30%;
+            margin-top: 30px;
+        }
+        .left h1 {
+            font-size: 3rem;
+            margin-bottom: 35px;
+            margin-top: 10px;
+        }
+        .links {
+            display: flex;
+            gap: 25px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #2f9cf0;            
+            margin-top: 43px;
+            margin-bottom: 35px;
+        }
+        .links a {
+            color: #2f9cf0;            
+        }
+        .links a:hover {
+            color: #fff;
+        }
+        .button {
+            display: inline-block;
+            width: 100px;
+            padding: 10px;
+            background-color: #2f9cf0;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            margin-right: 40px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #1a7bbf;
+        }
+        .text-me:hover {
+            background-color: #1a7bbf;
+        }        
+        .text-me {
+            display: inline-block;
+            width: 100px;
+            padding: 10px;
+            background-color: #2f9cf0;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .right {
+            flex: 1;            
+            text-align: center;
+            max-width: 60%;
+            overflow: hidden; /* Ensures clean blending */
+        }
+        .right img {
+            width: 43%;
+            height: auto;
+            object-fit: cover; /* Keeps image proportional */
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+        }        
+        .scroll {
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 100%;
+            color: azure;
+            font-size: 16px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .hidden{
+            opacity: 0;            
+            visibility: hidden;
+            pointer-events: none; /* Prevents interaction when hidden */
+        }
+        
+        .about-section {            
+            height: auto;
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+        .about-section h1 {            
+            color: #2f9cf0;
+            font-size: 30px;
+        }
+        .about-section p {
+            font-size: 30px;
+            color: antiquewhite;
+            line-height: 1.6;            
+            margin-top: 10%;
+            padding: 70px;
+            text-align: justify;
+        }
+
+        .projects-section {
+            text-align: center;                        
+            margin-top: -160px;
+        }
+        .projects-section h1 {
+            font-size: 30px;
+            color: #2f9cf0;
+            margin-bottom: 70px;
+        }
+        .projects-section p {
+            font-size: 19px;
+            color: antiquewhite;
+            margin-bottom: 70px;
+        }
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 70px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .category {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .category h3 {
+            color: #0073e6;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .project {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .project h4 {
+            color: #2f9cf0;
+            margin-bottom: 5px;
+        }
+        .project p {
+            font-size: 14px;
+            color: #2f9cf0;
+        }
+
+        footer {            
+            color: white;
+            text-align: center;
+            padding: 15px;            
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 3px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;                          
+            }
+            .navbar .menu {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                width: 150px;
+                height: auto;
+                border-radius: 5px;
+                padding-top: 25px;
+                margin-top: 25px;
+            }
+            .navbar .logo {
+                margin-left: 7px;
+            }
+            .navbar .menu.active {
+                display: flex;
+            }
+            .navbar .hamburger {
+                display: flex;
+                margin-right: 50px;
+                margin-left: -160px;
+            }            
+            .navbar .menu .dropdown-content{
+                width: auto;
+                padding: 10px;                
+            }            
+
+            .main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0 43px 0 0;
+                margin-top: 88px;
+            }
+            .left, .right {
+                max-width: 100%;
+                margin-top: 30px;                
+            }
+            .right img {                
+                height: auto;
+                border-radius: 50%; 
+                border: 2px solid #2f9cf0;
+                margin-top: 20px;
+                height: 300px;
+                width: 300px;
+            }
+            .links{                
+                justify-content: center;
+            }
+            .scroll {
+                display: none;            
+            }
+            
+            .about-section p{
+                padding: 7px;
+                font-size: 20px;                
+            }
+
+            .projects-section{
+                margin-top: 7px;
+            }
+            #info {
+                padding: 0 7px;                
+            }
+            .categories-container {
+                flex-direction: column;
+                gap: 40px;
+                padding: 20px;
+            }
+            .category {
+                width: 100%;
+                padding: 0;
+            }
+
+            footer {
+                padding: 10px;
+            }
+            
+            .footer-container p {
+                font-size: 14px;
+            }            
+            footer a {                
+                margin: 5px 2px;
+            }            
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 375px) {
+            .main h1 {
+                font-size: 2.5rem;
+            }
+
+            .button, .text-me {
+                width: 80px;
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .right img {
+                width: 80%;
+                height: auto;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#"><div class="logo"><img src="./Images/logo.png" alt="Logo" width="70px" height="70px"></div></a>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Project</a>
+            <div class="dropdown">
+                <a href="#">Publication</a>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/file/d/1nav_-Kc1XFDJwmCX5yJUkwWTszRLHPhN/view?pli=1" target="_blank" rel="noopener noreferrer">Tweetler</a>
+                    <a href="https://www.irjet.net/archives/V8/i11/IRJET-V8I1150.pdf" target="_blank" rel="noopener noreferrer">Smart Health Monitoring System</a>
+                    <a href="https://www.irjet.net/archives/V8/i4/IRJET-V8I4303.pdf" target="_blank" rel="noopener noreferrer">Android Based Electric Switch</a>
+                </div>
+            </div>
+            
+        </div>
+        <a class="telephone" href="tel:9920554833"><i class="fa-solid fa-phone-volume"></i> </a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <section class="main" id="main">
+        <div class="left">
+            <p style="color: #1a7bbf">Electronics Engineer</p>
+            <h1 style="color: white;">Hi I'm Rutvij A,</h1>
+            <p style="color: antiquewhite; text-align: justify; line-height: 1.6;">Innovation and problem-solving drive a passionate approach, 
+                strengthened by extensive hands-on project experience and impactful contributions in dynamic environments. 
+                Actively seeking opportunities to apply skills and develop meaningful solutions within forward-thinking organizations.</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/rutvij-ambodkar/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.github.com/rutvij-a/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/rutvij_a/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/rutvij.ambodkar/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://x.com/007rutvij" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <a class="button" href="./Files/Rutvij-Resume.pdf" target="_blank">Resume</a>
+            <a class="text-me" href="mailto:rutvijambodkar@gmail.com">Text Me</a>
+        </div>
+        <div class="right">
+            <img src="./Images/IMG_20240225_161931.png" alt="Profile Image" height="430" width="430">
+        </div>
+        <p style="color: azure;" class="scroll">🖱️ Scroll Down</p>
+    </section>
+
+    <section class="about-section" id="about">
+        <h1>About Me</h1>
+        <p>An enthusiastic engineering graduate with a passion for tackling complex problems and devising innovative solutions.
+            I thrive on challenges and am always eager to learn and adapt in a fast-paced environment. 
+            Throughout my academic journey, I have participated in numerous hands-on projects that you'll see in the further section, 
+            and collaborated with cross-functional teams to deliver impactful results. 
+            I have a passion for continuous learning and staying updated with the latest technological advancements. 
+            As I embark on my professional journey, I am seeking opportunities to contribute my skills and grow within a dynamic and forward-thinking organization. 
+            Let's connect and explore how we can work together to drive innovation and success! 
+        </p>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h1>Projects</h1>
+        <p id="info">Here are some of the projects I've worked on. Click on any project to learn more about it.</p>
+        <div class="categories-container">
+            
+            <!-- Hardware Projects -->
+            <div class="category">
+                <h3>Hardware Projects</h3>
+                <div class="project" onclick="window.location.href='ABES.html'">
+                    <h4>Android Based Electric Switch</h4>
+                    <p>A system for controlling appliances remotely from smartphones</p>
+                </div>
+                <div class="project" onclick="window.location.href='FTA.html'">
+                    <h4>Face Touch Alert Wrist Band</h4>
+                    <p>A wrist band to protect the people from taking their hands towards their faces which put them into the risk of COVID-19</p>
+                </div>
+                <div class="project" onclick="window.location.href='SPCFPG.html'">
+                    <h4>Smart Phone Charging Using Footstep Power Generator</h4>
+                    <p>A system to generate power using footsteps using piezo plates</p>
+                </div>
+                <div class="project" onclick="window.location.href='SHMS.html'">
+                    <h4>Smart Health Monitoring System</h4>
+                    <p>A system to remotely monitor patient's health</p>
+                </div>
+            </div>
+
+            <!-- Software Projects -->
+            <div class="category">
+                <h3>Software Projects</h3>
+                <div class="project" onclick="window.location.href='ARMS.html'">
+                    <h4>Academic Record Management System</h4>
+                    <p>A record management system that stores students academic records</p>
+                </div>
+                <div class="project" onclick="window.location.href='PA.html'">
+                    <h4>Python Assistant</h4>
+                    <p>A personal assitant created using python</p>
+                </div>
+                <div class="project" onclick="window.location.href='TBL.html'">
+                    <h4>The Book Look</h4>
+                    <p>A dynamic website of an online book store</p>
+                </div>
+                <div class="project" onclick="window.location.href='SAVB.html'">
+                    <h4>Sentiment Analysis Virtual Bot</h4>
+                    <p>A bot for segregatting tweets according to their sentiments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright <span id="year"></span> | All Rights Reserved</p>
+            <p>Made by <a href="#">Rutvij Ambodkar</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/f085dee1bb.js" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+            // Check if the alert has already been shown
+            if (!localStorage.getItem("alertShown")) {
+                alert("Welcome to my portfolio!"); // Show the alert
+                localStorage.setItem("alertShown", "true"); // Set flag in localStorage
+            }
+        };
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }        
+
+        const scrollText = document.querySelector('.scroll');
+        let scrollCount = 0;
+        setInterval(() => {
+            scrollText.style.opacity = (scrollCount % 2 === 0) ? '1' : '0.5';
+            scrollCount++;
+        }, 3400);
+
+        let lastScrtollTop = 0;
+        window.addEventListener('scroll', function() {
+            let scrollElement = document.querySelector('.scroll');
+            if (window.scrollY > 10) {
+                scrollElement.classList.add('hidden');
+            } else {
+                scrollElement.classList.remove('hidden');
+            }            
+        });
+
+        let d = new Date();
+        let year = d.getFullYear();
+        document.getElementById("year").innerHTML = year;
+    </script>
+</body>
+</html>
