@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Projects</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        main {
+            padding: 0 20px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            text-align: center;
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .projects-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .projects-section h1 {
+            font-size: 2rem;
+            color: #2f9cf0;
+            margin-bottom: 20px;
+        }
+
+        .projects-section p {
+            font-size: 1.1rem;
+            color: antiquewhite;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            margin-top: 50px;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 160px;
+            max-width: 1100px;
+            margin: auto;
+            opacity: 0;
+            transform: translateX(70px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .categories-section.visible .categories-container {
+            opacity: 1;
+            transform: translateY(-100px);
+        }
+
+        .category {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            flex: 1;
+            min-width: 280px;
+            max-width: 500px;
+        }
+
+        .categories-section.visible .category:nth-child(even) {
+            transform: translateX(-70px);
+            opacity: 1;
+        }
+
+        .categories-section.visible .category:nth-child(odd) {
+            transform: translateX(70px);
+            opacity: 1;
+        }
+
+        .category h3 {
+            color: #0073e6;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .project {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h4 {
+            color: #2f9cf0;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .project p {
+            font-size: 0.9rem;
+            color: #2f9cf0;
+        }
+
+        /* 🔧 Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .projects-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .projects-section p {
+                font-size: 1rem;
+            }
+
+            .categories-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 60px;
+                transform: translateX(70px);
+                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            }
+
+            .categories-section.visible .category:nth-child(odd) {
+                transform: translateX(70px);
+                opacity: 1;
+            }
+
+            .category {
+                min-width: 100%;                
+            }
+
+            .categories-section.visible .category:nth-child(even),
+            .categories-section.visible .category:nth-child(odd) {
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-section h1 {
+                font-size: 1.5rem;
+            }
+
+            .project h4 {
+                font-size: 0.95rem;
+            }
+
+            .project p {
+                font-size: 0.85rem;
+            }
+
+            .categories-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 40px;            
+            }
+
+            .category {
+                min-width: 100%;
+                transform: translateX(-10px);
+            }           
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="projects-section" id="projects">
+            <h1>Projects</h1>
+            <p id="info">
+                Here are some of the projects I've worked on. Click on any project to learn more about it.
+            </p>
+        </section>
+
+        <section class="categories-section">
+            <div class="categories-container">
+                <!-- Hardware -->
+                <div class="category">
+                    <h3>Hardware Projects</h3>
+                    <div class="project" onclick="window.location.href='ABES.html'">
+                        <h4>Android Based Electric Switch</h4>
+                        <p>Control appliances remotely</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='FTA.html'">
+                        <h4>Face Touch Alert Wrist Band</h4>
+                        <p>COVID-19 preventive wearable</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='SPCFPG.html'">
+                        <h4>Footstep Power Generator</h4>
+                        <p>Energy from footsteps</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='SHMS.html'">
+                        <h4>Smart Health Monitoring</h4>
+                        <p>Patient health tracking</p>
+                    </div>
+                </div>
+
+                <!-- Software -->
+                <div class="category">
+                    <h3>Software Projects</h3>
+                    <div class="project" onclick="window.location.href='ARMS.html'">
+                        <h4>Academic Record System</h4>
+                        <p>Manage student records</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='PA.html'">
+                        <h4>Python Assistant</h4>
+                        <p>Voice-activated assistant</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='TBL.html'">
+                        <h4>The Book Look</h4>
+                        <p>Online book store</p>
+                    </div>
+                    <div class="project" onclick="window.location.href='SAVB.html'">
+                        <h4>Sentiment Analysis Bot</h4>
+                        <p>Filter tweets by sentiment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const projectsSection = document.querySelector(".projects-section");
+            const categoriesSection = document.querySelector(".categories-section");
+
+            const observerA = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        projectsSection.classList.add("visible");
+                        observerA.unobserve(projectsSection);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observerA.observe(projectsSection);
+
+            const observerB = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        categoriesSection.classList.add("visible");
+                        observerB.unobserve(categoriesSection);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observerB.observe(categoriesSection);
+        });
+    </script>
+</body>
+
+</html>
