@@ -155,3 +155,160 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Touch Alert Wrist Band</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {            
+            color: #2f9cf0;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;            
+            border-radius: 8px;            
+            flex-grow: 1;
+        }
+        .container .section p,ul{
+                text-align: justify;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #2f9cf0;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        .section p {
+            color: antiquewhite;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Footer styles */
+        footer {            
+            color: white;
+            text-align: center;
+            padding: 15px;            
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            footer {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Face Touch Alert Wrist Band</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>
+                The Automation of Thermal Screening in Public Places project aims to enhance public safety by preventing individuals from unknowingly touching 
+                their faces an action that can increase the risk of COVID-19 transmission. The project introduces an FTA wrist band, designed to alert users when they bring their 
+                hands close to their faces. The wristband utilizes an infrared (IR) sensor to detect facial proximity and trigger a buzzer alert, reminding the wearer to avoid touching their face. <br><br>
+                This project was developed with the objective of reducing human error in preventing virus spread, particularly during pandemics. 
+                Through sensor-based automation, the wristband improves individual awareness and encourages better hygiene practices. The FTA wrist band is a practical solution for 
+                public health safety, especially in crowded areas where maintaining social distance is challenging. 
+                By providing a gentle reminder to avoid face touching, the wristband contributes to the overall effort of minimizing virus transmission and protecting public health.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Features & Functionality</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li><b>Infrared (IR) Sensor Integration:</b> Detects hand movements when approaching the face and sends signals to the microcontroller.</li><br>
+                    <li><b>Arduino Mini Processing Unit:</b> Manages sensor input and triggers the alert mechanism.</li><br>
+                    <li><b>Buzzer Alert System:</b> Provides an audible warning whenever hand movement towards the face is detected.</li><br>
+                    <li><b>Compact and Wearable Design:</b> The wristband is lightweight, ensuring comfort and usability for everyday wear.</li><br>
+                    <li><b>2032 Rechargeable Battery:</b> Powers the device with a long battery life, making it suitable for continuous use.</li><br>
+                    <li><b>LED Indicators:</b> Provide visual confirmation that the system is working correctly.</li><br>
+                </ul>
+            </p>
+            <!--<img src="feature-image.jpg" alt="Feature Description">-->
+        </div>
+
+        <div class="section">
+            <h2>Project Demonstration</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li>The IR sensor detects a human face when a user moves their hand toward it.</li><br>
+                    <li>The Arduino microcontroller processes the signal and checks predefined conditions.</li><br>
+                    <li>If the movement is too close to the face, the system activates the buzzer, warning the user.</li><br>
+                    <li>The LEDs light up, indicating that the alert has been triggered.</li><br>
+                    <li>The system works seamlessly through simulation and hardware testing, proving effective in real-life scenarios.</li><br>
+                    <li>The project can be adapted for other health-related applications beyond COVID-19 prevention.</li><br>
+                </ul>
+            </p>
+            <!--<img src="demo-image.jpg" alt="Project Demo">-->
+            <button onclick="alert('More details coming soon!')">Learn More</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright 2025 | All Rights Reserved</p>
+            <p>Made by<a href="#">Rutvij A</a> </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,4 +157,164 @@
     </footer>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health Monitoring System</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        header {            
+            color: #2f9cf0;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;            
+            border-radius: 8px;            
+            flex-grow: 1;
+        }
+        .container .section p,ul{
+                text-align: justify;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #2f9cf0;
+            margin-bottom: 10px;
+            font-size: 25px;
+        }
+        .section p {
+            color: antiquewhite;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #555;
+        }
+
+        /* Footer styles */
+        footer {            
+            color: white;
+            text-align: center;
+            padding: 15px;            
+            width: 100%;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            footer {
+                padding: 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Smart Health Monitoring System</h1>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Project Overview</h2>
+            <p>The Smart Health Monitoring System Using IoT is designed to track and monitor essential health parameters remotely using IoT technology. 
+                With the increasing demand for efficient healthcare solutions, this system enables real-time health tracking for elderly individuals or patients requiring continuous monitoring.
+                The main objective is to collect health data such as heart rate, blood oxygen level (SpO2), temperature, and ECG using various biomedical sensors. 
+                This data is uploaded to an IoT cloud platform (ThingSpeak), making it accessible to doctors and caregivers remotely. 
+                The system ensures timely diagnosis and alerts in case of abnormal readings, improving healthcare efficiency.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Features & Functionality</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li><b>Multi-Sensor Integration: </b>The system utilizes ECG (AD8232), Heart Rate & SpO2 (MAX30102), and Temperature (DS18B20) sensors to continuously track health metrics.</li><br>
+                    <li><b>IoT-Based Data Upload: </b>Health readings are uploaded to ThingSpeak Cloud, allowing remote access for doctors and caregivers.</li><br>
+                    <li><b>LCD Display for Local Readings: </b>Users can view real-time health statistics on an LCD display.</li><br>
+                    <li><b>Automated Emergency Alerts: </b>If health readings exceed critical levels (e.g., HR < 50 or > 100, SpO2 < 95, Temperature > 40°C), the system triggers a buzzer alert and displays an Emergency Warning.</li><br>
+                    <li><b>Two-Mode System:</b></li><br>
+                        <ul>
+                            <li><b>Mode 1 → </b>Monitors Heart Rate, Blood Oxygen, and Temperature</li><br>
+                            <li><b>Mode 2 → </b>Captures ECG data for detailed heart activity</li><br>
+                        </ul>
+                    <li><b>ESP8266 Wi-Fi Module Integration: </b>Ensures seamless data transfer from sensors to the cloud.</li><br>
+                    <li><b>User-Friendly & Wearable Design: </b>The system is compact and suitable for daily use, enhancing healthcare accessibility.</li><br>
+                </ul>
+            </p>
+            <!--<img src="feature-image.jpg" alt="Feature Description">-->
+        </div>
+
+        <div class="section">
+            <h2>Project Demonstration</h2>
+            <p>
+                <ul style="color: antiquewhite; font-size: 17px;">
+                    <li>The ECG sensor (AD8232), Heart Rate & SpO2 sensor (MAX30102), and Temperature sensor (DS18B20) collect health data.</li><br>
+                    <li>The LCD display shows real-time readings. If values are abnormal, ‘Emergency’ is displayed, and a buzzer alerts the user.</li><br>
+                    <li>The ESP8266 Wi-Fi module uploads data to the ThingSpeak IoT cloud, allowing remote tracking.</li><br>
+                    <li>Doctors or caregivers can access health records remotely, ensuring timely medical intervention.</li><br>
+                    <li>The system efficiently diagnoses critical conditions, reducing hospital visits and improving real-time health monitoring.</li><br>
+                </ul>
+            </p>
+            <!--<img src="demo-image.jpg" alt="Project Demo">-->
+            <button onclick="window.location.href='https://www.irjet.net/archives/V8/i11/IRJET-V8I1150.pdf'">Learn More</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Copyright 2025 | All Rights Reserved</p>
+            <p>Made by<a href="#">Rutvij A</a> 
+            </p>
+        </div>
+    </footer>
+
+</body>
+>>>>>>> fe0870872c37a25a66d1c5417111ff77ae6fc5b9
 </html>
