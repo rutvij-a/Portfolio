@@ -25,14 +25,6 @@
         .projects-section {
             text-align: center;
             padding: 60px 0;
-            opacity: 0;
-            transform: translateY(70px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-
-        .projects-section.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .projects-section h1 {
@@ -51,8 +43,8 @@
         }
 
         /* Categories Section */
-        .categories-section {
-            margin-top: 50px;
+        .categories-section {            
+            padding: 40px 0;            
         }
 
         .categories-container {
@@ -61,15 +53,7 @@
             justify-content: center;
             gap: 160px;
             max-width: 1100px;
-            margin: auto;
-            opacity: 0;
-            transform: translateX(70px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .categories-section.visible .categories-container {
-            opacity: 1;
-            transform: translateY(-100px);
+            margin: auto;            
         }
 
         .category {
@@ -77,23 +61,18 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: transform 0.8s ease, opacity 0.8s ease;
             flex: 1;
             min-width: 280px;
             max-width: 500px;
+            opacity: 0;
+            transform: scale(0.3);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            animation: zoomIn 1s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-
-        .categories-section.visible .category:nth-child(even) {
-            transform: translateX(-70px);
+        .category.appear {
             opacity: 1;
-        }
-
-        .categories-section.visible .category:nth-child(odd) {
-            transform: translateX(70px);
-            opacity: 1;
-        }
+            transform: scale(1);
+        }   
 
         .category h3 {
             color: #0073e6;
@@ -128,37 +107,31 @@
             color: #2f9cf0;
         }
 
+        @keyframes zoomIn {
+            0%{
+                transform: scale(0.3);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+
         /* 🔧 Media Queries for Responsiveness */
         @media (max-width: 768px) {
             .projects-section h1 {
                 font-size: 1.8rem;
             }
-
             .projects-section p {
                 font-size: 1rem;
             }
-
             .categories-container {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 60px;
-                transform: translateX(70px);
-                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+                gap: 60px;                
             }
-
-            .categories-section.visible .category:nth-child(odd) {
-                transform: translateX(70px);
-                opacity: 1;
-            }
-
             .category {
                 min-width: 100%;                
-            }
-
-            .categories-section.visible .category:nth-child(even),
-            .categories-section.visible .category:nth-child(odd) {
-                transform: translateY(0);
             }
         }
 
@@ -183,8 +156,7 @@
             }
 
             .category {
-                min-width: 100%;
-                transform: translateX(-10px);
+                min-width: 100%;                
             }           
         }
     </style>
@@ -246,34 +218,39 @@
         </section>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const projectsSection = document.querySelector(".projects-section");
-            const categoriesSection = document.querySelector(".categories-section");
-
-            const observerA = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        projectsSection.classList.add("visible");
-                        observerA.unobserve(projectsSection);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            observerA.observe(projectsSection);
-
-            const observerB = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        categoriesSection.classList.add("visible");
-                        observerB.unobserve(categoriesSection);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            observerB.observe(categoriesSection);
+<!--<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target); // Optional: animate only once
+            }
         });
-    </script>
+    }, {
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.category').forEach(category => {
+        observer.observe(category);
+    });
+</script>-->
+<script>
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target); // Ensures the animation runs just once
+            }
+        });
+    }, {
+        threshold: 0.25 // Adjust sensitivity as needed
+    });
+
+    // Target each category container
+    document.querySelectorAll('.category').forEach(category => {
+        observer.observe(category);
+    });
+</script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutvij's Portfolio</title>
     <link rel="icon" href="./Images/ChatGPT Image Apr 5, 2025, 12_22_28 AM-modified.png" type="image/png">
-    <style>        
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -28,29 +28,35 @@
             top: 0;
             z-index: 1000;
         }
+
         .navbar .logo {
             color: rgba(16, 90, 199, 1);
             font-size: 20px;
             font-weight: bold;
             margin-left: 90px;
         }
+
         .navbar .menu {
             display: flex;
             gap: 70px;
             position: relative;
         }
+
         .navbar .menu a {
             text-decoration: none;
             color: rgba(16, 90, 199, 1);
             font-size: 16px;
             position: relative;
         }
+
         .navbar .menu a:hover {
             color: #fff;
         }
+
         .navbar .menu .dropdown {
             position: relative;
         }
+
         .navbar .menu .dropdown-content {
             display: none;
             position: absolute;
@@ -63,29 +69,35 @@
             border-radius: 5px;
             flex-direction: column;
         }
+
         .navbar .menu .dropdown-content a:hover {
             color: #fff;
         }
+
         .navbar .menu .dropdown-content a {
             color: rgba(16, 90, 199, 1);
             text-decoration: none;
             margin: 5px 0;
             padding-top: 20px;
         }
+
         .navbar .menu .dropdown:hover .dropdown-content {
             display: flex;
         }
+
         .navbar .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
+
         .navbar .hamburger div {
             background-color: rgba(16, 90, 199, 1);
             height: 3px;
             width: 25px;
             margin: 3px 0;
         }
+
         .navbar .telephone {
             color: rgba(16, 90, 199, 1);
             font-size: 20px;
@@ -93,6 +105,7 @@
             display: flex;
             margin-right: 7%;
         }
+
         .navbar .telephone:hover {
             color: #fff;
         }
@@ -100,6 +113,7 @@
         section {
             margin-bottom: 16%;
         }
+
         .main {
             display: flex;
             flex-wrap: wrap;
@@ -109,16 +123,19 @@
             margin-left: 10%;
             margin-top: 10%;
         }
+
         .left {
             flex: 1;
             max-width: 30%;
             margin-top: 30px;
         }
+
         .left h1 {
             font-size: 3rem;
             margin-bottom: 35px;
             margin-top: 10px;
         }
+
         .links {
             display: flex;
             gap: 25px;
@@ -128,12 +145,15 @@
             margin-top: 43px;
             margin-bottom: 35px;
         }
+
         .links a {
             color: #2f9cf0;
         }
+
         .links a:hover {
             color: #fff;
         }
+
         .button {
             display: inline-block;
             width: 100px;
@@ -146,12 +166,15 @@
             border-radius: 5px;
             text-decoration: none;
         }
+
         .button:hover {
             background-color: #1a7bbf;
         }
+
         .text-me:hover {
             background-color: #1a7bbf;
         }
+
         .text-me {
             display: inline-block;
             width: 100px;
@@ -163,19 +186,24 @@
             border-radius: 5px;
             text-decoration: none;
         }
+
         .right {
             flex: 1;
             text-align: center;
             max-width: 60%;
-            overflow: hidden; /* Ensures clean blending */
+            overflow: hidden;
+            /* Ensures clean blending */
         }
+
         .right img {
             width: 43%;
             height: auto;
-            object-fit: cover; /* Keeps image proportional */
+            object-fit: cover;
+            /* Keeps image proportional */
             mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
             -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
         }
+
         .scroll {
             position: absolute;
             bottom: 0%;
@@ -187,10 +215,12 @@
             font-size: 16px;
             transition: opacity 0.5s ease-in-out;
         }
+
         .hidden {
             opacity: 0;
             visibility: hidden;
-            pointer-events: none; /* Prevents interaction when hidden */
+            pointer-events: none;
+            /* Prevents interaction when hidden */
         }
 
         .about-section {
@@ -201,12 +231,14 @@
             text-align: center;
             padding: 40px;
         }
+
         /* Active state when section becomes visible */
         .about-section.visible h1,
         .about-section.visible p {
             opacity: 1;
             transform: translateY(0);
         }
+
         .about-section h1 {
             color: #2f9cf0;
             font-size: 30px;
@@ -214,6 +246,7 @@
             transform: translateY(70px);
             transition: transform 0.7s ease, opacity 0.6s ease;
         }
+
         .about-section p {
             font-size: 30px;
             color: antiquewhite;
@@ -227,7 +260,7 @@
         }
 
         .projects-section {
-            text-align: center;            
+            text-align: center;
             padding: auto 0;
             opacity: 0;
             /* Initially hidden */
@@ -249,7 +282,7 @@
             margin-bottom: 5px;
             max-width: 800px;
             margin-left: auto;
-            margin-right: auto;            
+            margin-right: auto;
         }
         /* Categories Section */
         .categories-section {
@@ -261,35 +294,27 @@
             justify-content: center;
             gap: 160px;
             max-width: 1600px;
-            margin: auto;
-            transform: translateX(70px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .categories-section.visible .categories-container {
-            opacity: 1;
-            transform: translateY(-100px);
+            margin: 0 auto 0 auto;
+            align-items: center;
+            /* Centers items vertically */            
         }
         .category {
             flex: 1;
+            width: 100%;
             min-width: 280px;
-            max-width: 500px;
-            background-color: #fff;
-            padding: 20px;
+            max-width: 500px;            
+            background-color: #fff;            
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0px 16px;            
             opacity: 0;
-            transform: translateX(100px);
-            transition: transform 0.8s ease, opacity 0.8s ease;
+            transform: scale(0.3);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            animation: zoomIn 1s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
-        /* Left slide for even categories */
-        .categories-section.visible .category:nth-child(even) {
-            transform: translateX(-70px);
+        .category.appear {
             opacity: 1;
-        }
-        /* Right slide for odd categories */
-        .categories-section .category:nth-child(odd) {
-            transform: translateX(70px);
-            opacity: 1;
+            transform: scale(1);
         }
         .category h3 {
             color: #0073e6;
@@ -318,24 +343,30 @@
             color: #2f9cf0;
         }
 
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.3);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         footer {
             color: white;
             text-align: center;
             padding: 15px;
             width: 100%;
         }
-
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
         }
-
         footer a {
             color: white;
             text-decoration: none;
             margin: 0 3px;
         }
-
         footer a:hover {
             text-decoration: underline;
         }
@@ -345,7 +376,6 @@
             .navbar {
                 flex-wrap: wrap;
             }
-
             .navbar .menu {
                 display: none;
                 flex-direction: column;
@@ -359,21 +389,17 @@
                 padding-top: 25px;
                 margin-top: 25px;
             }
-
             .navbar .logo {
                 margin-left: 7px;
             }
-
             .navbar .menu.active {
                 display: flex;
             }
-
             .navbar .hamburger {
                 display: flex;
                 margin-right: 50px;
                 margin-left: -160px;
             }
-
             .navbar .menu .dropdown-content {
                 width: auto;
                 padding: 10px;
@@ -386,13 +412,11 @@
                 padding: 0 43px 0 0;
                 margin-top: 88px;
             }
-
             .left,
             .right {
                 max-width: 100%;
                 margin-top: 30px;
             }
-
             .right img {
                 height: auto;
                 border-radius: 50%;
@@ -401,11 +425,9 @@
                 height: 300px;
                 width: 300px;
             }
-
             .links {
                 justify-content: center;
             }
-
             .scroll {
                 display: none;
             }
@@ -418,61 +440,30 @@
             .projects-section {
                 margin-top: 7px;
             }
-
             #info {
                 padding: 0 7px;
             }
-
             .categories-container {
+                display: flex;
                 flex-direction: column;
-                gap: 40px;
-                padding: 20px;
-                margin: auto;
+                justify-content: center;
+                gap: 60px;                                
             }
-
             .category {
-                width: 100%;
-                padding: 0;
+                min-width: 100%;
+                margin: 10px 20px;
             }
 
             footer {
                 padding: 10px;
             }
-
             .footer-container p {
                 font-size: 14px;
             }
-
             footer a {
                 margin: 5px 2px;
             }
 
-            .projects-section p{
-                margin-bottom: 100px;
-            }
-
-            .categories-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 60px;
-                transform: translateX(70px);
-                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            }
-
-            .categories-section.visible .category:nth-child(odd) {
-                transform: translateX(70px);
-                opacity: 1;
-            }
-
-            .category {
-                min-width: 100%;                
-            }
-
-            .categories-section.visible .category:nth-child(even),
-            .categories-section.visible .category:nth-child(odd) {
-                transform: translateY(0);
-            }
         }
 
         @media screen and (min-width: 0px) and (max-width: 375px) {
@@ -486,26 +477,25 @@
                 padding: 8px;
                 font-size: 12px;
             }
-
             .right img {
                 width: 80%;
                 height: auto;
             }
 
-            .projects-section p{
+            .projects-section p {
                 margin-bottom: 100px;
             }
-
             .categories-container {
+                display: flex;
+                flex-wrap: wrap;
                 flex-direction: column;
+                justify-content: center;
                 gap: 20px;
-                padding: 20px;
-                margin: auto;
+                padding: 20px;                
             }
-
             .category {
                 min-width: 100%;
-                transform: translateX(-10px);
+                margin: 10px 15px;                
             }
         }
     </style>
@@ -592,7 +582,7 @@
         <p id="info">Here are some of the projects I've worked on. Click on any project to learn more about it.</p>
     </section>
     <section class="categories-section">
-        <div class="categories-container">    
+        <div class="categories-container">
             <!-- Hardware Projects -->
             <div class="category">
                 <h3>Hardware Projects</h3>
@@ -688,7 +678,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             const projectsSection = document.querySelector(".projects-section");
             const categoriesSection = document.querySelector(".categories-section");
-
             const observerA = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -697,20 +686,22 @@
                     }
                 });
             }, { threshold: 0.1 });
-
             observerA.observe(projectsSection);
-
-            const observerB = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        categoriesSection.classList.add("visible");
-                        observerB.unobserve(categoriesSection);
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target); // Ensures the animation runs just once
                     }
                 });
-            }, { threshold: 0.2 });
-
-            observerB.observe(categoriesSection);
-        });    
+            }, {
+                threshold: 0.25 // Adjust sensitivity as needed
+            });
+            // Target each category container
+            document.querySelectorAll('.category').forEach(category => {
+                observer.observe(category);
+            });
+        });
 
 
         let lastScrtollTop = 0;
@@ -726,6 +717,7 @@
         let d = new Date();
         let year = d.getFullYear();
         document.getElementById("year").innerHTML = year;
+
     </script>
 </body>
 
