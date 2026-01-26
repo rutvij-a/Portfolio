@@ -139,11 +139,16 @@
 
     <footer>
         <div class="footer-container">
-            <p>&copy; Copyright 2025 | All Rights Reserved</p>
-            <p>Made by<a href="#">Rutvij A</a> 
-            </p>
+            <p>&copy; Copyright <span id="year"></span> | All Rights Reserved</p>
+            <p>Made by <a href="#">Rutvij A</a></p>
         </div>
     </footer>
+
+    <script>
+        let d = new Date();
+        let year = d.getFullYear();
+        document.getElementById("year").innerHTML = year;
+    </script>
 
 </body>
 </html>
