@@ -1,4 +1,4 @@
-body {
+        body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
@@ -29,8 +29,8 @@ body {
 
         .navbar .menu {
             display: flex;
-            gap: 70px;
             position: relative;
+            gap: 70px;
         }
 
         .navbar .menu a {
@@ -370,16 +370,19 @@ body {
             .navbar .menu {
                 display: none;
                 flex-direction: column;
+                gap: 52px;
                 background-color: rgba(0, 0, 0, 0.9);
                 position: absolute;
-                top: 50px;
-                right: 20px;
+                top: 60%;
+                right: 10%;
                 width: 150px;
                 height: auto;
                 border-radius: 5px;
-                padding-top: 25px;
-                margin-top: 25px;
+                padding: 52px 15px;
             }
+            /*.navbar .menu a{
+                padding: 25px;
+            }*/
             .navbar .logo {
                 margin-left: 7px;
             }
@@ -394,6 +397,13 @@ body {
             .navbar .menu .dropdown-content {
                 width: auto;
                 padding: 10px;
+                position: relative;
+                left: 7%;
+                background-color: inherit;
+            }
+            .navbar .menu .dropdown-content a {
+                padding: 6px 0;
+                white-space: normal;
             }
 
             .main {
@@ -459,6 +469,7 @@ body {
         }
 
         @media screen and (min-width: 0px) and (max-width: 375px) {
+            
             .main h1 {
                 font-size: 2.5rem;
             }
