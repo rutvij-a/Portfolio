@@ -127,6 +127,20 @@
             margin-top: 10px;
         }
 
+        .left .intro {
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            overflow-wrap: break-word;
+            word-break: normal;
+            text-justify: inter-word;
+        }
+
+        /*.left .intro1 {
+            display: none;
+        }*/
+
         .links {
             display: flex;
             gap: 25px;
@@ -244,10 +258,16 @@
             line-height: 1.6;
             margin-top: 10%;
             padding: 70px;
-            text-align: justify;
             opacity: 0;
             transform: translateY(50px);
             transition: transform 0.7s ease, opacity 0.6s ease;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            overflow-wrap: break-word;
+            word-break: normal;
+            text-justify: inter-word;
         }
 
         .projects-section {
@@ -418,6 +438,18 @@
                 max-width: 100%;
                 margin-top: 30px;
             }
+            /*.left .intro {
+                text-align: justify;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                overflow-wrap: break-word;
+                word-break: normal;
+                text-justify: inter-word;
+            }*/
+            /*.left .intro1 {
+                font-size: medium;
+            }*/
             .right img {
                 height: auto;
                 border-radius: 50%;
@@ -436,6 +468,7 @@
             .about-section p {
                 padding: 7px;
                 font-size: 20px;
+                text-align: left;
             }
 
             .projects-section {
@@ -443,7 +476,8 @@
             }
             #info {
                 padding: 0 7px;
-                margin-top: 50px;
+                margin-top: 10px;
+                margin-bottom: 20px;
             }
             .categories-container {
                 display: flex;
@@ -486,7 +520,7 @@
             }
 
             .projects-section p {
-                margin-bottom: 100px;
+                margin-bottom: 200px;
             }
             .categories-container {
                 display: flex;
