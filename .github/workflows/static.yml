@@ -35,9 +35,9 @@ jobs:
         uses: cicirello/generate-sitemap@v1.10.4
         with:
           # Adjust this to match your site’s base URL
-          base-url: "https://rutvij-a.github.io/Portfolio/"
+          base-url: "https://rutvij-a.github.io/Portfolio"
           # Optional: specify directory if not root
-          path-to-root: "."
+          path-to-root: "./dist"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
