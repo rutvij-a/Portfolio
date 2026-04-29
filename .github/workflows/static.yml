@@ -34,10 +34,12 @@ jobs:
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1.10.4
         with:
-          # Adjust this to match your site’s base URL
           base-url-path: "https://rutvij-a.github.io/Portfolio"
-          # Optional: specify directory if not root
           path-to-root: "."
+
+      # Debug step to confirm sitemap exists
+      - name: Verify sitemap
+        run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
