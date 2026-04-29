@@ -35,7 +35,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1.10.4
         with:
           base-url-path: "https://rutvij-a.github.io/Portfolio"
-          path-to-root: "./Portfolio"
+          path-to-root: "."
 
       # Debug step to confirm sitemap exists
       - name: Verify sitemap
@@ -44,7 +44,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './Portfolio'
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
