@@ -41,6 +41,10 @@ jobs:
       - name: Verify sitemap
         run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
+      # 🔍 New debug step
+      - name: List all files before upload
+        run: ls -R .
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
