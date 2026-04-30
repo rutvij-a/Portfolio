@@ -50,12 +50,12 @@ jobs:
 
       # 🔍 New debug step
       - name: List all files before upload
-        run: ls -R .
+        run: ls -R site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: 'site'
 
       - name: Deploy to GitHub Pages
         id: deployment
