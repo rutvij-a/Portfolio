@@ -41,6 +41,10 @@ jobs:
       - name: Verify sitemap
         run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
+      # 🔧 Copy sitemap into site root
+      - name: Move sitemap into site folder
+        run: cp sitemap.xml ./sitemap.xml
+
       # 🔍 New debug step
       - name: List all files before upload
         run: ls -R .
