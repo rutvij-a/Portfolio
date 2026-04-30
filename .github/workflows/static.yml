@@ -45,9 +45,9 @@ jobs:
       - name: Prepare site folder
         run: |
           mkdir site
-          shopt -s dotglob
-          cp -r !(site) site/
-          cp sitemap.xml site
+          # Copy everything except the site folder itself
+          find . -maxdepth 1 -mindepth 1 ! -name site -exec cp -r {} site/ \;
+          cp sitemap.xml site/
 
       # 🔍 New debug step
       - name: List all files before upload
