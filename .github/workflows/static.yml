@@ -41,12 +41,11 @@ jobs:
       - name: Verify sitemap
         run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
-      # 🔧 Prepare deployment folder
+      # 🔧 Prepare deployment folder safely
       - name: Prepare site folder
         run: |
           mkdir site
-          # Copy everything except the site folder itself
-          find . -maxdepth 1 -mindepth 1 ! -name site -exec cp -r {} site/ \;
+          cp -r index.html *.html *.css *.txt *.md LICENSE robots.txt Images Files site/ || true
           cp sitemap.xml site/
 
       # 🔍 New debug step
