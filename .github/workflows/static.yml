@@ -1,12 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -14,22 +10,13 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1.10.4
@@ -37,33 +24,15 @@ jobs:
           base-url-path: "https://rutvij-a.github.io/Portfolio"
           path-to-root: "."
 
-      - name: Fix sitemap format
-        run: |
-          sed -i 's|<urlset>|<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">|' sitemap.xml
+      # 🔍 Debug: confirm sitemap content
+      - name: Show sitemap
+        run: cat sitemap.xml
 
-      - name: Fix lastmod dates
-        run: |
-          sed -i.bak 's|<lastmod>.*</lastmod>||g' sitemap.xml
-          rm sitemap.xml.bak
-
-      - name: Verify sitemap
-        run: ls -l sitemap.xml || echo "sitemap.xml not found"
-
-      # 🔧 Prepare deployment folder safely
-      - name: Prepare site folder
-        run: |
-          mkdir site
-          rsync -av --exclude=site . site/
-
-      # 🔍 New debug step
-      - name: List all files before upload
-        run: ls -R site
-
+      # 🚀 Deploy directly (NO site folder)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'site'
+          path: '.'
 
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
