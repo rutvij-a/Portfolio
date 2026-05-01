@@ -37,9 +37,17 @@ jobs:
           base-url-path: "https://rutvij-a.github.io/Portfolio"
           path-to-root: "."
 
-      # Debug step to confirm sitemap exists
-      - name: Verify sitemap
-        run: ls -l sitemap.xml || echo "sitemap.xml not found"
+      - name: Fix sitemap format
+        run: |
+          sed -i '1s|<urlset>|<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">|' sitemap.xml
+
+      - name: Fix lastmod dates
+        run: |
+          sed -i 's/<lastmod>.*<\/lastmod>//g' sitemap.xml
+
+            # Debug step to confirm sitemap exists
+            - name: Verify sitemap
+              run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
       # 🔧 Prepare deployment folder safely
       - name: Prepare site folder
