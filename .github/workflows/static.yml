@@ -45,7 +45,7 @@ jobs:
       - name: Prepare site folder
         run: |
           mkdir site
-          cp -r ./* site/
+          rsync -av --exclude=site . site/
 
       # 🔍 New debug step
       - name: List all files before upload
