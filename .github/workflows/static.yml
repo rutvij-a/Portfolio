@@ -45,8 +45,7 @@ jobs:
       - name: Prepare site folder
         run: |
           mkdir site
-          cp -r index.html *.html *.css *.txt *.md LICENSE robots.txt Images Files site/ || true
-          cp sitemap.xml site/
+          cp -r ./* site/
 
       # 🔍 New debug step
       - name: List all files before upload
