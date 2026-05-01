@@ -43,11 +43,11 @@ jobs:
 
       - name: Fix lastmod dates
         run: |
-          sed -i 's/<lastmod>.*<\/lastmod>//g' sitemap.xml
+          sed -i.bak 's|<lastmod>.*</lastmod>||g' sitemap.xml
+          rm sitemap.xml.bak
 
-            # Debug step to confirm sitemap exists
-            - name: Verify sitemap
-              run: ls -l sitemap.xml || echo "sitemap.xml not found"
+      - name: Verify sitemap
+        run: ls -l sitemap.xml || echo "sitemap.xml not found"
 
       # 🔧 Prepare deployment folder safely
       - name: Prepare site folder
