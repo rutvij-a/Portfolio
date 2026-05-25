@@ -1,0 +1,122 @@
+.projects-section {
+    text-align: center;
+    padding: auto 0;
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(70px);
+    transition: opacity 0.7s ease-in, transform 0.7s ease-out;
+}
+.projects-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.projects-section h1 {
+    font-size: 30px;
+    color: #2f9cf0;
+    margin-bottom: 100px;
+}
+.projects-section p {
+    font-size: 19px;
+    color: antiquewhite;
+    margin-bottom: -200px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Categories Section */
+.categories-section {
+    margin-top: 50px;
+}
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 160px;
+    max-width: 1600px;
+    margin: 0 auto 0 auto;
+    align-items: center;
+    /* Centers items vertically */            
+}
+.category {
+    flex: 1;
+    width: 100%;
+    min-width: 280px;
+    max-width: 500px;            
+    background-color: #fff;            
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0px 16px;            
+    opacity: 0;
+    transform: scale(0.3);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    animation: zoomIn 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.category.appear {
+    opacity: 1;
+    transform: scale(1);
+}
+.category h3 {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.project {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+.project h4 {
+    color: #2f9cf0;
+    margin-bottom: 5px;
+}
+.project p {
+    font-size: 14px;
+    color: #2f9cf0;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-section {
+        margin-top: 7px;
+    }
+    #info {
+        padding: 0 7px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .categories-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;                                
+    }
+    .category {
+        min-width: 100%;
+        margin: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 375px) {
+    .projects-section p {
+        margin-bottom: 200px;
+    }
+    .categories-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;                
+    }
+    .category {
+        min-width: 100%;
+        margin: 10px 15px;                
+    }
+}

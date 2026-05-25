@@ -21,6 +21,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Style/project-section-style.css">
 </head>
 
 <body>
@@ -63,11 +64,6 @@
                 environments.
                 Actively seeking opportunities to apply skills and develop meaningful solutions within forward-thinking
                 organizations.</p>
-                <!--<pre style="color: antiquewhite; line-height: 1.6;" class="intro1">
-                Innovation and problem-solving drive a passionate approach, strengthened 
-                by extensive hands-on project experience and impactful contributions in 
-                dynamic environments. Actively seeking opportunities to apply skills and 
-                develop meaningful solutions within forward-thinking organizations.</pre>-->
             <div class="links">
                 <a href="https://www.linkedin.com/in/rutvij-ambodkar/" target="_blank" rel="noopener noreferrer"><i
                         class="fa-brands fa-linkedin"></i></a>
@@ -106,53 +102,134 @@
         </p>
     </section>
 
-    <section class="projects-section" id="projects">
+    <!-- Projects -->
+    <section class="projects">
         <h1 class="project-title">Projects</h1>
-        <p id="info">Some of the projects I've worked on. Click on any project to learn more about it.</p>
-    </section>
-    <section class="categories-section">
-        <div class="categories-container">
-            <!-- Hardware Projects -->
-            <div class="category">
-                <h3>Hardware Projects</h3>
-                <div class="project" onclick="window.location.href='ABES.html'">
-                    <h4>Android Based Electric Switch</h4>
-                    <p>A system for controlling appliances remotely from smartphones</p>
-                </div>
-                <div class="project" onclick="window.location.href='FTA.html'">
-                    <h4>Face Touch Alert Wrist Band</h4>
-                    <p>A wrist band to protect the people from taking their hands towards their faces which put them
-                        into the risk of COVID-19</p>
-                </div>
-                <div class="project" onclick="window.location.href='SPCFPG.html'">
-                    <h4>Smart Phone Charging Using Footstep Power Generator</h4>
-                    <p>A system to generate power using footsteps using piezo plates</p>
-                </div>
-                <div class="project" onclick="window.location.href='SHMS.html'">
-                    <h4>Smart Health Monitoring System</h4>
-                    <p>A system to remotely monitor patient's health</p>
-                </div>
+        <div class="hardware">
+            <h1 class="heading-main">Hardware Projects</h1>
+            <h1 class="heading">Android Based Electric Switch</h1>
+            <div class="hardware_project-1">
+                <img src="/Images/ABES-1.png" alt="ABES">
+                <p class="hardware_project_info">
+                    <span class="project_info_text">
+                        The project is about controlling electrical devices 
+                        using a mobile phone in a simple and convenient way. Instead of manually switching 
+                        appliances on or off, users can do it wirelessly through an Android app. The system 
+                        connects the phone to the switch using Bluetooth. When a user taps a button in the 
+                        app, the appliance turns on or off accordingly. It makes everyday tasks easier and 
+                        saves time. It can also help reduce electricity waste by allowing better control of 
+                        devices. Overall, it is a basic step toward smart home automation.
+                    </span>
+                    <br><br><button class="hardware_project_info_more" onclick="window.location.href='ABES.html'">Learn More</button>
+                </p>
+            </div>                
+            <h1 class="heading">Face Touch Alert Wrist Band</h1>
+            <div class="hardware_project-2">
+                <p class="hardware_project_info">
+                    <span class="project_info_text">
+                        The project is about a wearable wristband that helps 
+                        people avoid touching their face, which can spread infections. It is designed to improve 
+                        personal safety and hygiene, especially in public places. The band detects when a hand 
+                        comes too close to the face and gives a warning. This reminder helps users become more 
+                        aware of their actions. The device is simple, lightweight, and easy to use in daily life. 
+                        Overall, it supports public health by encouraging safer habits and reducing the risk of disease 
+                        transmission.
+                    </span>
+                    <br><br><button class="hardware_project_info_more" onclick="window.location.href='FTA.html'">Learn More</button>
+                </p>
+                <img src="/Images/FTA-2.png" alt="FTA">
             </div>
-
-            <!-- Software Projects -->
-            <div class="category">
-                <h3>Software Projects</h3>
-                <div class="project" onclick="window.location.href='ARMS.html'">
-                    <h4>Academic Record Management System</h4>
-                    <p>A record management system that stores students academic records</p>
-                </div>
-                <div class="project" onclick="window.location.href='PA.html'">
-                    <h4>Python Assistant</h4>
-                    <p>A personal assitant created using python</p>
-                </div>
-                <div class="project" onclick="window.location.href='TBL.html'">
-                    <h4>The Book Look</h4>
-                    <p>A dynamic website of an online book store</p>
-                </div>
-                <div class="project" onclick="window.location.href='SAVB.html'">
-                    <h4>Sentiment Analysis Virtual Bot</h4>
-                    <p>A bot for segregatting tweets according to their sentiments</p>
-                </div>
+            <h1 class="heading">Smart Phone Charging Using Footstep Power Generator</h1>
+            <div class="hardware_project-3">                
+                <img src="/Images/SPCFPC-1.png" alt="SPCFPC">
+                <p class="hardware_project_info">
+                    <span class="project_info_text">
+                        This project focuses on generating electricity from everyday 
+                        walking movements. It uses footstep pressure to create energy, offering a simple and eco-
+                        friendly power solution. The generated energy is stored and can be used to charge mobile phones. 
+                        It promotes the use of renewable energy and reduces dependence on traditional power 
+                        sources. The system is especially useful in busy public places like malls and stations. 
+                        Overall, it presents an innovative and sustainable way to produce and use energy.
+                    </span>
+                    <br><br><button class="hardware_project_info_more" onclick="window.location.href='SPCFPG.html'">Learn More</button>
+                </p>
+            </div>
+            <h1 class="heading">Smart Health Monitoring System</h1>
+            <div class="hardware_project-4">
+                <p class="hardware_project_info">
+                    <span class="project_info_text">
+                        The project is about a smart system that helps monitor a persons 
+                        health using the internet. It tracks important health details like heart rate, oxygen level, 
+                        temperature, and heart activity. The data can be viewed both on a display and remotely by doctors 
+                        or caregivers. It is designed to support patients who need regular health checkups, especially elderly
+                        people. The system can also give alerts if any health condition becomes abnormal. It is compact, easy 
+                        to use, and improves access to healthcare. Overall, it makes health monitoring more convenient and 
+                        efficient.
+                    </span>
+                    <br><br><button class="hardware_project_info_more" onclick="window.location.href='SHMS.html'">Learn More</button>
+                </p>            
+                <img src="/Images/SHMS-1.1.jpg" alt="SHMS">
+            </div>
+        </div>
+        <div class="software">
+            <h1 class="heading-main">Software Projects</h1>
+            <h1 class="heading">Academic Record Management System</h1>
+            <div class="software_project-1">                
+                <img src="/Images/ARMS-1.png" alt="ARMS">
+                <p class="software_project_info">
+                    <span class="project_info_text">
+                        The project is about creating a digital system to store and manage students 
+                        academic records in an organized way. It allows students to save and access their personal details, 
+                        academic information, projects, and internships in one place. The system reduces the need for paper records 
+                        and makes information easy to find. It is secure, so only authorized users can access the data. It 
+                        is designed to be simple and user-friendly for everyday use. Overall, it helps institutions manage student 
+                        information efficiently and reliably.
+                    </span>
+                    <br><br><button class="software_project_info_more" onclick="window.location.href='ARMS.html'">Learn More</button>
+                </p>
+            </div>
+            <h1 class="heading">Personal Assistant - ZEN</h1>
+            <div class="software_project-2">
+                <p class="software_project_info">
+                    <span class="project_info_text">
+                        This project is about creating a smart voice-based assistant called ZEN 1.0 
+                        that helps users perform everyday tasks easily. It allows users to interact using simple voice commands 
+                        instead of typing. The assistant can handle activities like searching information, playing media, 
+                        sending emails, and managing basic system functions. It is designed to make daily tasks faster and 
+                        more convenient. The system focuses on user-friendly interaction and automation. Overall, it acts like a 
+                        personal digital helper that improves productivity and saves time.
+                    </span>
+                    <br><br><button class="software_project_info_more" onclick="window.location.href='PA.html'">Learn More</button>
+                </p>
+                <img src="/Images/PA-1.png" alt="PA">
+            </div>
+            <h1 class="heading">Online Book Store - The Book Look</h1>
+            <div class="software_project-3">
+                <img src="/Images/TBL-1.png" alt="TBL">
+                <p class="software_project_info">
+                    <span class="project_info_text">
+                        This project is about creating an online platform where users can easily 
+                        buy books from anywhere. It allows customers to browse, search, and choose books without visiting a 
+                        physical store. The system makes book shopping more convenient and accessible at any time. Users can 
+                        create accounts and manage their purchases smoothly. It is designed to be simple and user-friendly for a 
+                        better shopping experience. Overall, it improves efficiency and makes buying books faster and easier.
+                    </span>
+                    <br><br><button class="software_project_info_more" onclick="window.location.href='TBL.html'">Learn More</button>
+                </p>
+            </div>
+            <h1 class="heading">Sentiment Analysis Virtual Bot - Tweeler </h1>
+            <div class="software_project-4">
+                <p class="software_project_info">
+                    <span class="project_info_text">
+                        This project is about analyzing peoples opinions and emotions from Twitter 
+                        posts. It helps identify whether a tweet expresses a positive, negative, or neutral feeling. The system is 
+                        useful for understanding public opinion and trends in real time. It can help businesses and individuals track 
+                        feedback and improve their decisions. The platform is designed to be simple, fast, and accurate in analyzing 
+                        large amounts of data. Overall, it makes it easier to understand what people think and feel on social media.
+                    </span>
+                    <br><br><button class="software_project_info_more" onclick="window.location.href='SAVB.html'">Learn More</button>
+                </p>
+                <img src="/Images/SAVB-1.png" alt="SAVB">
             </div>
         </div>
     </section>
@@ -166,87 +243,146 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/f085dee1bb.js" crossorigin="anonymous"></script>
+    
     <script>
+        // To send alert message welcoming viewers only once
         window.onload = function () {
-            // Check if the alert has already been shown
             if (!localStorage.getItem("alertShown")) {
-                alert("Welcome to my portfolio!"); // Show the alert
-                localStorage.setItem("alertShown", "true"); // Set flag in localStorage
+                alert("Welcome to my portfolio!");
+                localStorage.setItem("alertShown", "true");
             }
         };
 
+
+        // To toggle mobile navigation menu
         function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("active");
         }
 
-        const scrollText = document.querySelector('.scroll');
+
+        // To create blinking effect on scroll text
+        const scrollText = document.querySelector(".scroll");
         let scrollCount = 0;
-        setInterval(() => {
-            scrollText.style.opacity = (scrollCount % 2 === 0) ? '1' : '0.5';
-            scrollCount++;
-        }, 3400);
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const aboutSection = document.querySelector(".about-section");
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        aboutSection.classList.add("visible");
-                        observer.unobserve(aboutSection); // Run animation only once
-                    }
-                });
-            }, {
-                threshold: 0.2 // Adjust visibility trigger
-            });
-
-            observer.observe(aboutSection);
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const projectsSection = document.querySelector(".projects-section");
-            const categoriesSection = document.querySelector(".categories-section");
-            const observerA = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        projectsSection.classList.add("visible");
-                        observerA.unobserve(projectsSection);
-                    }
-                });
-            }, { threshold: 0.1 });
-            observerA.observe(projectsSection);
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('appear');
-                        observer.unobserve(entry.target); // Ensures the animation runs just once
-                    }
-                });
-            }, {
-                threshold: 0.25 // Adjust sensitivity as needed
-            });
-            // Target each category container
-            document.querySelectorAll('.category').forEach(category => {
-                observer.observe(category);
-            });
-        });
+        if (scrollText) {
+            setInterval(() => {
+                scrollText.style.opacity = (scrollCount % 2 === 0) ? "1" : "0.5";
+                scrollCount++;
+            }, 3400);
+        }
 
 
-        let lastScrtollTop = 0;
-        window.addEventListener('scroll', function () {
-            let scrollElement = document.querySelector('.scroll');
-            if (window.scrollY > 10) {
-                scrollElement.classList.add('hidden');
-            } else {
-                scrollElement.classList.remove('hidden');
+        // To hide scroll text after user starts scrolling
+        window.addEventListener("scroll", function () {
+            const scrollElement = document.querySelector(".scroll");
+
+            if (scrollElement) {
+                if (window.scrollY > 10) {
+                    scrollElement.classList.add("hidden");
+                }
+                else {
+                    scrollElement.classList.remove("hidden");
+                }
             }
         });
 
-        let d = new Date();
-        let year = d.getFullYear();
-        document.getElementById("year").innerHTML = year;
 
+        // To automatically update footer year
+        const d = new Date();
+        const year = d.getFullYear();
+
+        const yearElement = document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.innerHTML = year;
+        }
+
+
+        // To add animation to About section when it comes into view
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutSection = document.querySelector(".about-section");
+
+            if (aboutSection) {
+                const aboutObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            aboutSection.classList.add("visible");
+                            aboutObserver.unobserve(aboutSection);
+                        }
+                    });
+                }, {
+                    threshold: 0.2
+                });
+
+                aboutObserver.observe(aboutSection);
+            }
+        });
+
+
+        // To add animation to Projects section when it comes into view
+        document.addEventListener("DOMContentLoaded", function () {
+            const projectsSection = document.querySelector(".projects");
+
+            if (projectsSection) {
+                const projectsObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            projectsSection.classList.add("visible");
+                            projectsObserver.unobserve(projectsSection);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                projectsObserver.observe(projectsSection);
+            }
+        });
+
+
+        // To add animation to headings and project information when visible
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElements = document.querySelectorAll(
+                ".heading-main, .heading, .hardware_project_info, .software_project_info"
+            );
+
+            const textObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        textObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            textElements.forEach(element => {
+                textObserver.observe(element);
+            });
+        });
+
+
+        // To add zoom animation to images when visible
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".projects img, .right img");
+
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("appear");
+                        imageObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            images.forEach(image => {
+                imageObserver.observe(image);
+            });
+        });
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -255,7 +391,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        
         gtag('config', 'G-5W40MVXPCT');
     </script>
 
