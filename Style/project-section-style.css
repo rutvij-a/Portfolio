@@ -40,7 +40,7 @@ body{
     transform: translateY(0);
 }
 
-img {
+.projects img {
     width: clamp(auto, 45vw, 700px);
     height: auto;
     opacity: 0;
