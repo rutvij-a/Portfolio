@@ -58,6 +58,7 @@ img.appear {
     display: flex;
     width: 95%;
     gap: 0.001%;
+    margin-bottom: 5%;
 }
 
 .hardware_project_info{
@@ -87,24 +88,28 @@ img.appear {
     display: flex;
     width: 95%;
     gap: 3%;
+    margin-bottom: 5%;
 }
 
 .hardware_project-3{
     display: flex;
     width: 95%;
     gap: 0.001%;
+    margin-bottom: 5%;
 }
 
 .hardware_project-4{
     display: flex;
     width: 95%;
     gap: 2%;
+    margin-bottom: 5%;
 }
 
 .software_project-1{
     display: flex;
     width: 95%;
     gap: 0.001%;
+    margin-bottom: 5%;
 }
 .software_project_info{
     font-size: clamp(7px,4vw,25px);
@@ -133,6 +138,7 @@ img.appear {
     display: flex;
     width: 95%;
     gap: 0.9%;
+    margin-bottom: 5%;
 }
 
 .software_project-3{
@@ -140,12 +146,14 @@ img.appear {
     width: 95%;
     gap: 0.001%;
     margin-left: 2%;
+    margin-bottom: 5%;
 }
 
 .software_project-4{
     display: flex;
     width: 95%;
     gap: 1%;
+    margin-bottom: 5%;
 }
 
 
